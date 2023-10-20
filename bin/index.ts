@@ -16,13 +16,21 @@ let projectName = 'my-project';
 let routingFlag = "--routing";
 
 function createAngularProject() {
+    askparrametters();
+    createArchitectureFolders();
+    configureDomain();
+    configureCore();
+    configurePresentation();
+
+}
+function askparrametters() {
     rl.question('Enter Your Project Name: ', (name) => {
         console.log(name);
         projectName = name;
 
         rl.question('Allow Routing ? (Y/n): ', (routing) => {
-             routingFlag = routing.toLowerCase() === 'y' ? '--routing' : '';
-            
+            routingFlag = routing.toLowerCase() === 'y' ? '--routing' : '';
+
             createArchitectureFolders();
         });
 
@@ -32,12 +40,10 @@ function createAngularProject() {
 }
 
 function createArchitectureFolders() {
-    fs.mkdirSync(projectName+'/'+'src/app/core');
-    fs.mkdirSync(projectName+'/'+'src/app/domain');
-    fs.mkdirSync(projectName+'/'+'src/app/data');
-    fs.mkdirSync(projectName+'/'+'src/app/presentation');
-
-    configureDomain();
+    fs.mkdirSync(projectName + '/' + 'src/app/core');
+    fs.mkdirSync(projectName + '/' + 'src/app/domain');
+    fs.mkdirSync(projectName + '/' + 'src/app/data');
+    fs.mkdirSync(projectName + '/' + 'src/app/presentation');
 }
 
 function configureDomain() {
@@ -62,18 +68,11 @@ function configureDomain() {
 
     fs.writeFileSync(projectName + '/' + 'src/app/domain/usecases/user.usecase.ts', '');
     fs.writeFileSync(projectName + '/' + 'src/app/domain/usecases/user-register.usecase.ts', '');
-
-    // End Of domain configuration
-
-    configureCore();
 }
 
 function configureCore() {
-    // Manage Core Configuration
     fs.writeFileSync(projectName + '/' + 'src/app/core/mapper.ts', '');
     fs.writeFileSync(projectName + '/' + 'src/app/core/readme.md', '');
-
-    configurePresentation();
 }
 
 function configurePresentation() {
@@ -81,7 +80,6 @@ function configurePresentation() {
     fs.mkdirSync(projectName + '/' + 'src/app/presentation/components');
     fs.writeFileSync(projectName + '/' + 'src/app/presentation/readme.md', '');
     fs.writeFileSync(projectName + '/' + 'src/app/presentation/components/readme.md', '');
-
     console.log('================================================================');
     console.log('-------------- Copyright Arolle Aguekeng -----------------------');
     console.log('================================================================');
