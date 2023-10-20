@@ -8,9 +8,20 @@ echo "================================================================"
 echo
 
 createAngularProject(){
-    ng new devpea-site --routing --style=scss --skip-tests=true --skip-install=true
-    cd devpea-site/src/app
+    read -p "Enter Your Project Name: " projectName
+    echo $projectName
+    read -p "Allow Routing ? (Y/n): " allowRouting
+    if [ $allowRouting="y" ]
+    then
+        $allowRouting = "--routing"
+    else
+        $allowRouting = ""
+    fi
+    ng new $projectName $allowRouting --style=scss --skip-tests=true --skip-install=true
+    cd $projectName/src/app
 }
+
+
 
 createArchitectureFolders() {
     mkdir core
@@ -63,6 +74,14 @@ configureData(){
     mkdir -p data/repositories/user/mappers
     touch data/repositories/user/mappers/user.mapper.ts
 }
+
+createAngularProject
+createArchitectureFolders
+configureDomain
+configureCore
+configurePresentation
+configureData
+
 
 
 echo "================================================================"

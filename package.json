@@ -1,0 +1,31 @@
+{
+  "name": "angular-cam",
+  "version": "0.0.1",
+  "description": "Angular Clean Architecture Management",
+  "main": "bin/index.ts",
+  "scripts": {
+    "test": "acam test",
+    "start": "node bin/index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arolleaguekeng/angular-cam.git"
+  },
+  "keywords": [
+    "angular",
+    "architecture",
+    "clean"
+  ],
+  "author": "devpea",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/arolleaguekeng/angular-cam/issues"
+  },
+  "homepage": "https://github.com/arolleaguekeng/angular-cam#readme",
+  "devDependencies": {
+    "@types/node": "^20.8.7"
+  },
+  "dependencies": {
+    "child_process": "^1.0.2"
+  }
+}
