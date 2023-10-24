@@ -1,6 +1,8 @@
 const readline = require('readline');
 const fs = require('fs');
 const { execSync } = require('child_process');
+const blessed = require('blessed');
+const { program } = blessed;
 
 const rl = readline.createInterface({
     input: process.stdin,
@@ -15,14 +17,6 @@ console.log('================================================================');
 let projectName = 'my-project';
 let routingFlag = "--routing";
 
-function createAngularProject() {
-    askparrametters();
-    createArchitectureFolders();
-    configureDomain();
-    configureCore();
-    configurePresentation();
-
-}
 function askparrametters() {
     rl.question('Enter Your Project Name: ', (name) => {
         console.log(name);
@@ -87,4 +81,75 @@ function configurePresentation() {
     rl.close();
 }
 
-createAngularProject();
+function chooseArchitectureTemplate() {
+
+    const { Select } = require('enquirer');
+
+    (async () => {
+        const prompt = new Select({
+            message: 'Select Architecture:',
+            choices: [
+                "Angular Clean Architecture (Angular CA)",
+                "Angular Enterprise Architecture",
+                "Angular Feature Modules",
+                "Angular Monorepo Architecture",
+                "Angular Service-Oriented Architecture (SOA)",
+                "Angular Micro Frontends",
+                "Angular Serverless Architecture"
+            ],
+        });
+
+        const style = await prompt.run();
+
+        console.log(`Vous avez choisi le style: ${style}`);
+
+        switch (style) {
+            case "Angular Clean Architecture (Angular CA":
+                createAngClArch();
+            case "Angular Enterprise Architecture":
+                createAngEntArch();
+            case "Angular Feature Modules":
+                createAngFeatArch();
+            case "Angular Monorepo Architecture":
+                createAngMonArch();
+            case "Angular Service-Oriented Architecture (SOA)":
+                createAngSOAArch();
+            case "Angular Micro Frontends ":
+                createAngMicroArch();
+            case "Angular Serverless Architecture":
+                createAngServArch();
+            default:
+                createAngClArch();
+                break;
+        }
+
+    })();
+
+}
+askparrametters();
+chooseArchitectureTemplate();
+function createAngEntArch() {
+
+}
+function createAngFeatArch() {
+
+}
+function createAngMonArch() {
+
+}
+function createAngSOAArch() {
+
+}
+function createAngMicroArch() {
+
+}
+function createAngServArch() {
+
+}
+
+function createAngClArch() {
+    // createArchitectureFolders();
+    // configureDomain();
+    // configureCore();
+    // configurePresentation();
+}
