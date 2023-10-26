@@ -1,15 +1,13 @@
-import { AngularCleanArchitectureCli } from "./architectures/frontend/angular";
-import { AngularCleanArchitecture } from "./architectures/frontend/angular/angCleanArchtitecture";
+import { BackendCleanArchitectureCli } from "./architectures/backend/index.backend";
+import { FrontendCleanArchitectureCli } from "./architectures/frontend/index.frontend";
 
-const { Select, Input, Prompt, Confirm } = require('enquirer');
-const Enquirer = require('enquirer');
-const enquirer = new Enquirer();
-let jsTechlist = [
-    "angular",
-    "react",
-    "vue",
-    "svelte",
-    "vanilla"
+const { Select } = require('enquirer');
+
+
+
+let backOrFront = [
+    "frontend",
+    "backend"
 ];
 
 let tech = 'angular';
@@ -18,37 +16,35 @@ async function app() {
     console.log('*************************  JS - PLANNER ***********************');
     console.log('================================================================');
 
-    const prompt = await new Select({
-        message: 'Select Technology:',
-        choices: jsTechlist,
+    const backOrFrontPrompt = await new Select({
+        message: 'Your Project Is backend or Frontend ?',
+        choices: backOrFront,
     });
 
-    tech = await prompt.run();
-    switch (tech) {
-        case 'angular':
-            createAngClArch()
+    switch (await backOrFrontPrompt.run()) {
+        case 'frontend':
+            createFrontend();
             break;
-        case 'react':
-            console.log('react');
-            break;
-        case 'vue':
-            console.log('vue');
-            break;
-        case 'svelte':
-            console.log('svelte');
-            break;
-        case 'vanilla':
-            console.log('vanilla');
+        case 'backend':
+            createBackend();
             break;
         default:
-            console.log('angular');
+            createFrontend();
             break;
     }
+}
 
+function createFrontend() {
+    console.clear();
+    let frontend = new FrontendCleanArchitectureCli();
+    frontend.CreateFrontend();
 }
-function createAngClArch() {
-    let angularCleanArchitectureCli = new AngularCleanArchitectureCli();
-    angularCleanArchitectureCli.createArchitecture();
+
+function createBackend() {
+    console.clear();
+    let backend = new BackendCleanArchitectureCli();
+    backend.createBackend();
 }
+
 
 app();
