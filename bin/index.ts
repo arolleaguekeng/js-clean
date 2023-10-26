@@ -1,4 +1,5 @@
-import { AngularCleanArchitecture } from "./architectures/angCleanArchtitecture";
+import { AngularCleanArchitecture } from "./architectures/angular/angCleanArchtitecture";
+
 
 //jsplaner
 const { execSync } = require('child_process');
