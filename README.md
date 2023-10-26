@@ -1,6 +1,6 @@
 # Js Planner
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
-![Logo](https://github.com/arolleaguekeng/Js-Planner/tree/main/assets/js-planner-logo.png)
+![image](https://github.com/arolleaguekeng/Js-Planner/tree/main/assets/js-planner-logo.png)
 
 Welcome to Js Planner! 🚀
 
