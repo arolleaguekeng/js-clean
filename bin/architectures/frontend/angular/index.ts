@@ -35,8 +35,8 @@ export class AngularCleanArchitectureCli {
             }
 
             const command = `ng new ${projectName} ${routingFlag} --style=scss --skip-tests=true --skip-install=true`;
-            console.log(command);
             execSync(command, { stdio: 'inherit' });
+            console.clear();
             chooseArchitectureTemplate();
         }
 
