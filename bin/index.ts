@@ -3,14 +3,11 @@ import { FrontendCleanArchitectureCli } from "./architectures/frontend/index.fro
 
 const { Select } = require('enquirer');
 
-
-
 let backOrFront = [
     "frontend",
     "backend"
 ];
 
-let tech = 'angular';
 async function app() {
     console.log('================================================================');
     console.log('*************************  JS - PLANNER ***********************');
