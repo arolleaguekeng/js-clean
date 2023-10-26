@@ -5,7 +5,7 @@
   "main": "bin/index.ts",
   "scripts": {
     "test": "acam test",
-    "start": "node bin/index.ts"
+    "start": "ts-node  bin/index.ts"
   },
   "repository": {
     "type": "git",
@@ -29,6 +29,8 @@
     "blessed": "^0.1.81",
     "child_process": "^1.0.2",
     "enquirer": "^2.4.1",
-    "inquirer": "^9.2.11"
+    "inquirer": "^9.2.11",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.2.2"
   }
 }
