@@ -1,2 +1,2 @@
-# angular-cam
-Angular Clean Architecture Management
+# Js-Planner
+Creation of clean architecture templates for node js projects
