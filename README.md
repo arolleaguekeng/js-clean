@@ -1,5 +1,12 @@
 # Js Planner
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
+<img alt="npm" src="https://img.shields.io/npm/v/js-planner">
+<img alt="GitHub pull request check state" src="https://img.shields.io/github/status/s/pulls/arolleaguekeng/Js-Planner/15">
+
+
+
+
+
 #
 ![logo](https://github.com/arolleaguekeng/Js-Planner/blob/main/assets/js-planner-logo.png)
 
