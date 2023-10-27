@@ -1,7 +1,7 @@
 {
-  "name": "js-planner",
-  "version": "0.0.2",
-  "description": "Angular Clean Architecture Management",
+  "name": "js-clean",
+  "version": "0.0.1",
+  "description": "Creation of clean architecture templates for javascript and type projects",
   "main": "bin/index.ts",
   "scripts": {
     "test": "acam test",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/arolleaguekeng/Js-Planner.git"
+    "url": "git+https://github.com/arolleaguekeng/js-clean.git"
   },
   "keywords": [
     "angular",
@@ -19,9 +19,9 @@
   "author": "devpea",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/arolleaguekeng/Js-Planner/issues"
+    "url": "https://github.com/arolleaguekeng/js-clean/issues"
   },
-  "homepage": "https://github.com/arolleaguekeng/Js-Planner#readme",
+  "homepage": "https://github.com/arolleaguekeng/js-clean#readme",
   "devDependencies": {
     "@types/node": "^20.8.7"
   },

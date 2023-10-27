@@ -1,30 +1,30 @@
-# Js Planner
+# Js clean
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
-<img alt="npm" src="https://img.shields.io/npm/v/js-planner">
-<img alt="GitHub pull request check state" src="https://img.shields.io/github/status/s/pulls/arolleaguekeng/Js-Planner/15">
+<img alt="npm" src="https://img.shields.io/npm/v/js-clean">
+<img alt="GitHub pull request check state" src="https://img.shields.io/github/status/s/pulls/arolleaguekeng/js-clean/15">
 
 
 
 
 
 #
-![logo](https://github.com/arolleaguekeng/Js-Planner/blob/main/assets/js-planner-logo.png)
+![logo](https://github.com/arolleaguekeng/js-clean/blob/main/assets/js-clean-logo.png)
 
-Welcome to Js Planner! 🚀
+Welcome to Js clean! 🚀
 
-**Js Planner** is an open-source npm package that simplifies the process of creating clean architecture templates for backend and frontend JavaScript technologies. It's designed to help developers and software architects kickstart new projects without the hassle of worrying about the architecture.
+**Js clean** is an open-source npm package that simplifies the process of creating clean architecture templates for backend and frontend JavaScript technologies. It's designed to help developers and software architects kickstart new projects without the hassle of worrying about the architecture.
 
-## Why Js Planner?
+## Why Js clean?
 
-Are you tired of spending sleepless nights pondering project architecture? **Js Planner** is here to put an end to those architectural headaches. With Js Planner, you can:
+Are you tired of spending sleepless nights pondering project architecture? **Js clean** is here to put an end to those architectural headaches. With Js clean, you can:
 
 - Create clean architecture templates for various backend and frontend JavaScript technologies in a snap.
 - Start new projects quickly without overthinking the architecture.
 - Enjoy a robust, battle-tested architecture that follows best practices.
 
-And that's not all! In the future, **Js Planner** will evolve to provide a user-friendly graphical interface for visualizing and managing your project's architecture. Imagine how that will streamline your project management!
+And that's not all! In the future, **Js clean** will evolve to provide a user-friendly graphical interface for visualizing and managing your project's architecture. Imagine how that will streamline your project management!
 
-Best of all, **Js Planner** is open source. We encourage all passionate developers to collaborate and contribute. Your ideas, suggestions, and contributions are welcome!
+Best of all, **Js clean** is open source. We encourage all passionate developers to collaborate and contribute. Your ideas, suggestions, and contributions are welcome!
 
 ## Key Features
 
@@ -34,13 +34,13 @@ Best of all, **Js Planner** is open source. We encourage all passionate develope
 
 ## Installation
 
-To get started with Js Planner, simply install it as an npm package:
+To get started with Js clean, simply install it as an npm package:
 
 ```bash
-npm install js-planner
+npm install js-clean
 ```
 # Usage
-Js Planner is easy to use. Here's an example:
+Js clean is easy to use. Here's an example:
 Go to the project directory
 
 ```bash
@@ -50,13 +50,13 @@ Go to the project directory
 Install dependencies
 
 ```bash
-  npm install js-planner
+  npm install js-clean
 ```
 
 Start the server
 
 ```bash
-  npm planner create
+  npm jsc create
 ```
 ![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
 
