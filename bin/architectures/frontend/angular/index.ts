@@ -1,4 +1,4 @@
-import { AngularCleanArchitecture } from "./angularCleanArch";
+import { AngularCleanArchitecture } from "./angularCleanArch/angularCleanArch";
 
 const { execSync } = require('child_process');
 const blessed = require('blessed');
