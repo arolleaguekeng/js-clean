@@ -1,4 +1,5 @@
 import { AngularCleanArchitecture } from "./angularCleanArch/angularCleanArch";
+import { AngularEntrepriseArchitecture } from "./angularEntrepriseArch/angularEntrepriseArch";
 
 const { execSync } = require('child_process');
 const blessed = require('blessed');
@@ -14,7 +15,6 @@ export class AngularCleanArchitectureCli {
         console.log('********************  Angular Clean Architecture ***************');
         console.log('================================================================');
         let projectName = 'my-project';
-        let routingFlag = "--routing";
 
         async function askparrametters() {
             console.log('================================================================');
@@ -25,16 +25,7 @@ export class AngularCleanArchitectureCli {
             });
             projectName = projectNamePrompt['projectName'];
 
-            let routingFlag = await enquirer.prompt({
-                type: 'input',
-                name: 'routingFlag',
-                message: 'Do you want to add routing? (y/n) '
-            })
-            if (routingFlag["routingFlag"] === 'y') {
-                routingFlag = "--routing";
-            }
-
-            const command = `ng new ${projectName} ${routingFlag} --style=scss --skip-tests=true --skip-install=true`;
+            const command = `ng new ${projectName}   --skip-tests=true --skip-install=true`;
             execSync(command, { stdio: 'inherit' });
             console.clear();
             chooseArchitectureTemplate();
@@ -77,15 +68,12 @@ export class AngularCleanArchitectureCli {
                     createAngMicroArch();
                 case "Angular Serverless Architecture":
                     createAngServArch();
-                default:
-                    createAngClArch();
-                    break;
             }
 
         }
 
         function createAngEntArch() {
-            // TODO: Create Angular Enterprise Architecture
+            new AngularEntrepriseArchitecture(projectName).createArchitecture();
         }
         function createAngFeatArch() {
             // TODO: Create Angular Feature Modules
@@ -104,7 +92,7 @@ export class AngularCleanArchitectureCli {
         }
 
         function createAngClArch() {
-            new AngularCleanArchitecture(projectName).createAngularCleanArchitecture();
+            new AngularCleanArchitecture(projectName).createArchitecture();
         }
         askparrametters();
     }

@@ -50,7 +50,7 @@ export class AngularCleanArchitecture {
         console.log('================================================================');
     }
 
-    createAngularCleanArchitecture() {
+    createArchitecture() {
         this.createArchitectureFolders();
         this.configureDomain();
         this.configureCore();
