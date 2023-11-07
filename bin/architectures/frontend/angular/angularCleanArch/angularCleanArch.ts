@@ -5,46 +5,49 @@ export class AngularCleanArchitecture {
     constructor(projectName: string) {
         this.projectName = projectName;
     }
+    getProjectPath() {
+        return this.projectName + '/src/app';
+    }
     createArchitectureFolders() {
-        fs.mkdirSync(this.projectName + '/' + 'src/app/core');
-        fs.mkdirSync(this.projectName + '/' + 'src/app/domain');
-        fs.mkdirSync(this.projectName + '/' + 'src/app/data');
-        fs.mkdirSync(this.projectName + '/' + 'src/app/presentation');
+        fs.mkdirSync(`${this.getProjectPath()}/core`);
+        fs.mkdirSync(`${this.getProjectPath()}/domain`);
+        fs.mkdirSync(`${this.getProjectPath()}/data`);
+        fs.mkdirSync(`${this.getProjectPath()}/presentation`);
     }
 
     configureDomain() {
         // Manage Domain Configuration
-        fs.mkdirSync(this.projectName + '/' + 'src/app/domain/base');
-        fs.writeFileSync(this.projectName + '/' + 'src/app/domain/base/readme.md', '');
+        fs.mkdirSync(`${this.getProjectPath()}/domain/base`);
+        fs.writeFileSync(`${this.getProjectPath()}/domain/base/readme.md`, '');
 
-        fs.writeFileSync(this.projectName + '/' + 'src/app/domain/base/user-case.ts', '');
+        fs.writeFileSync(`${this.getProjectPath()}/domain/base/user-case.ts`, '');
 
-        fs.mkdirSync(this.projectName + '/' + 'src/app/domain/models');
-        fs.writeFileSync(this.projectName + '/' + 'src/app/domain/models/readme.md', '');
+        fs.mkdirSync(`${this.getProjectPath()}/domain/models`);
+        fs.writeFileSync(`${this.getProjectPath()}/domain/models/readme.md`, '');
 
-        fs.writeFileSync(this.projectName + '/' + 'src/app/domain/models/user.model.ts', '');
+        fs.writeFileSync(`${this.getProjectPath()}/domain/models/user.model.ts`, '');
 
-        fs.mkdirSync(this.projectName + '/' + 'src/app/domain/repositories');
-        fs.writeFileSync(this.projectName + '/' + 'src/app/domain/repositories/readme.md', '');
+        fs.mkdirSync(`${this.getProjectPath()}/domain/repositories`);
+        fs.writeFileSync(`${this.getProjectPath()}/domain/repositories/readme.md`, '');
 
-        fs.writeFileSync(this.projectName + '/' + 'src/app/domain/repositories/user.repository.ts', '');
+        fs.writeFileSync(`${this.getProjectPath()}/domain/repositories/user.repository.ts`, '');
 
-        fs.mkdirSync(this.projectName + '/' + 'src/app/domain/usecases');
-        fs.writeFileSync(this.projectName + '/' + 'src/app/domain/usecases/readme.md', '');
+        fs.mkdirSync(`${this.getProjectPath()}/domain/usecases`);
+        fs.writeFileSync(`${this.getProjectPath()}/domain/usecases/readme.md`, '');
 
-        fs.writeFileSync(this.projectName + '/' + 'src/app/domain/usecases/user.usecase.ts', '');
-        fs.writeFileSync(this.projectName + '/' + 'src/app/domain/usecases/user-register.usecase.ts', '');
+        fs.writeFileSync(`${this.getProjectPath()}/domain/usecases/user.usecase.ts`, '');
+        fs.writeFileSync(`${this.getProjectPath()}/domain/usecases/user-register.usecase.ts`, '');
     }
 
     configureCore() {
-        fs.writeFileSync(this.projectName + '/' + 'src/app/core/mapper.ts', '');
-        fs.writeFileSync(this.projectName + '/' + 'src/app/core/readme.md', '');
+        fs.writeFileSync(`${this.getProjectPath()}/core/mapper.ts`, '');
+        fs.writeFileSync(`${this.getProjectPath()}/core/readme.md`, '');
     }
     configurePresentation() {
         // Manage Presentation Configuration
-        fs.mkdirSync(this.projectName + '/' + 'src/app/presentation/components');
-        fs.writeFileSync(this.projectName + '/' + 'src/app/presentation/readme.md', '');
-        fs.writeFileSync(this.projectName + '/' + 'src/app/presentation/components/readme.md', '');
+        fs.mkdirSync(`${this.getProjectPath()}/presentation/components`);
+        fs.writeFileSync(`${this.getProjectPath()}/presentation/readme.md`, '');
+        fs.writeFileSync(`${this.getProjectPath()}/presentation/components/readme.md`, '');
         console.log('================================================================');
         console.log('-------------- Copyright Arolle Aguekeng -----------------------');
         console.log('================================================================');

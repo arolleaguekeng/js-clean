@@ -1,10 +1,11 @@
+
 import { AngularCleanArchitecture } from "./angularCleanArch/angularCleanArch";
 import { AngularEntrepriseArchitecture } from "./angularEntrepriseArch/angularEntrepriseArch";
+import { AngularFeatureModuleArchitecture } from "./angularFeaturesModule/angularFeatureModule";
+
 
 const { execSync } = require('child_process');
-const blessed = require('blessed');
-const { program } = blessed;
-const { Select, Input, Prompt, Confirm } = require('enquirer');
+const { Select } = require('enquirer');
 
 const Enquirer = require('enquirer');
 const enquirer = new Enquirer();
@@ -76,7 +77,7 @@ export class AngularCleanArchitectureCli {
             new AngularEntrepriseArchitecture(projectName).createArchitecture();
         }
         function createAngFeatArch() {
-            // TODO: Create Angular Feature Modules
+            new AngularFeatureModuleArchitecture(projectName).createArchitecture();
         }
         function createAngMonArch() {
             // TODO: Create Angular Monorepo Architecture

@@ -7,6 +7,9 @@ export class AngularEntrepriseArchitecture {
     constructor(projectName: string) {
         this.projectName = projectName;
     }
+    getProjectPath() {
+        return this.projectName + '/' + 'src/app';
+    }
     createArchitectureFolders() {
         fs.mkdirSync(this.projectName + '/' + 'src/app/modules');
 
@@ -16,41 +19,45 @@ export class AngularEntrepriseArchitecture {
             const options = { cwd: `${this.projectName}`, stdio: 'inherit' };
             execSync(command, options);
         }
-        //this.configureEnvironments();
 
     }
 
     configureShared() {
-        fs.mkdirSync(this.projectName + '/' + 'src/app/shared/components');
-        fs.writeFileSync(this.projectName + '/' + 'src/app/shared/components/readme.md', '');
-        
-        
-        fs.mkdirSync(this.projectName + '/' + 'src/app/shared/services');
-        fs.writeFileSync(this.projectName + '/' + 'src/app/shared/services/readme.md', '');
+        const projectPath = this.getProjectPath();
+        fs.mkdirSync(`${projectPath}/shared/components`);
+        fs.writeFileSync(`${projectPath}/shared/components/readme.md`, '');
 
-        fs.writeFileSync(this.projectName + '/' + 'src/app/shared/readme.md', '');
+        fs.mkdirSync(`${projectPath}/shared/services`);
+        fs.writeFileSync(`${projectPath}/shared/services/readme.md`, '');
+
+        fs.writeFileSync(`${projectPath}/shared/readme.md`, '');
     }
+
     configureEnvironments() {
-        fs.mkdirSync(this.projectName + '/' + 'src/environments');
-        fs.writeFileSync(this.projectName + '/' + 'src/environments/readme.md');
-        fs.writeFileSync(this.projectName + '/' + 'src/environments/environment.prod.ts');
-        fs.writeFileSync(this.projectName + '/' + 'src/environments/environment.ts');
+        const projectPath = this.getProjectPath();
+        fs.mkdirSync(`${projectPath}/environments`);
+        fs.writeFileSync(`${projectPath}/environments/readme.md`);
+        fs.writeFileSync(`${projectPath}/environments/environment.prod.ts`);
+        fs.writeFileSync(`${projectPath}/environments/environment.ts`);
     }
 
     configureCore() {
-        fs.mkdirSync(this.projectName + '/' + 'src/app/core/services');
-        fs.writeFileSync(this.projectName + '/' + 'src/app/core/services/readme.md');
+        const projectPath = this.getProjectPath();
+        fs.mkdirSync(`${projectPath}/core/services`);
+        fs.writeFileSync(`${projectPath}/core/services/readme.md`);
 
-        fs.mkdirSync(this.projectName + '/' + 'src/app/core/models');
-        fs.writeFileSync(this.projectName + '/' + 'src/app/core/models/readme.md');
+        fs.mkdirSync(`${projectPath}/core/models`);
+        fs.writeFileSync(`${projectPath}/core/models/readme.md`);
 
-        fs.mkdirSync(this.projectName + '/' + 'src/app/core/interceptors');
-        fs.writeFileSync(this.projectName + '/' + 'src/app/core/interceptors/readme.md');
+        fs.mkdirSync(`${projectPath}/core/interceptors`);
+        fs.writeFileSync(`${projectPath}/core/interceptors/readme.md`);
 
-        fs.writeFileSync(this.projectName + '/' + 'src/app/core/readme.md', '');
+        fs.writeFileSync(`${projectPath}/core/readme.md`, '');
     }
+
     configureModules() {
-        fs.writeFileSync(this.projectName + '/' + 'src/app/modules/readme.md', '');
+        const projectPath = this.getProjectPath();
+        fs.writeFileSync(`${projectPath}/modules/readme.md`, '');
     }
 
     createArchitecture() {
@@ -61,4 +68,3 @@ export class AngularEntrepriseArchitecture {
         console.log('Successfully created Angular Entreprise Architecture')
     }
 }
-
