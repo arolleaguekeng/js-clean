@@ -58,6 +58,9 @@ export class AngularCleanArchitecture {
         this.configureDomain();
         this.configureCore();
         this.configurePresentation();
+
+        // close the application
+        process.exit(0);
     }
 }
 

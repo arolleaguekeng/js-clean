@@ -36,21 +36,21 @@ export class AngularEntrepriseArchitecture {
     configureEnvironments() {
         const projectPath = this.getProjectPath();
         fs.mkdirSync(`${projectPath}/environments`);
-        fs.writeFileSync(`${projectPath}/environments/readme.md`);
-        fs.writeFileSync(`${projectPath}/environments/environment.prod.ts`);
-        fs.writeFileSync(`${projectPath}/environments/environment.ts`);
+        fs.writeFileSync(`${projectPath}/environments/readme.md`, '');
+        fs.writeFileSync(`${projectPath}/environments/environment.prod.ts`, '');
+        fs.writeFileSync(`${projectPath}/environments/environment.ts`, '');
     }
 
     configureCore() {
         const projectPath = this.getProjectPath();
         fs.mkdirSync(`${projectPath}/core/services`);
-        fs.writeFileSync(`${projectPath}/core/services/readme.md`);
+        fs.writeFileSync(`${projectPath}/core/services/readme.md`, '');
 
         fs.mkdirSync(`${projectPath}/core/models`);
-        fs.writeFileSync(`${projectPath}/core/models/readme.md`);
+        fs.writeFileSync(`${projectPath}/core/models/readme.md`, '');
 
         fs.mkdirSync(`${projectPath}/core/interceptors`);
-        fs.writeFileSync(`${projectPath}/core/interceptors/readme.md`);
+        fs.writeFileSync(`${projectPath}/core/interceptors/readme.md`, '');
 
         fs.writeFileSync(`${projectPath}/core/readme.md`, '');
     }
@@ -66,5 +66,8 @@ export class AngularEntrepriseArchitecture {
         this.configureCore();
         this.configureModules();
         console.log('Successfully created Angular Entreprise Architecture')
+
+        // close the application
+        process.exit(0);
     }
 }

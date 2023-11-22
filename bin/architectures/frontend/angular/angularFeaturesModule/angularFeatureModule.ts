@@ -60,5 +60,8 @@ export class AngularFeatureModuleArchitecture {
         await this.createArchitectureFolders();
         this.configureModuleFolders();
         console.log('Successfully created Angular Feature Module Architecture');
+
+        // close the application
+        process.exit(0);
     }
 }
