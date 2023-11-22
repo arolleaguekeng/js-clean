@@ -3,61 +3,49 @@ const fs = require('fs');
 const Enquirer = require('enquirer');
 const enquirer = new Enquirer();
 
+
 export class AngularMicroFrontArchitecture {
     projectName: string;
-    modules: string[] = [];
+    microFrontends: string[] = [];
     constructor(projectName: string) {
         this.projectName = projectName;
     }
 
     getProjectPath() {
-        return this.projectName + '/src/app';
+        return this.projectName + './';
     }
 
     async createArchitectureFolders() {
-        fs.mkdirSync(this.projectName + '/src/app/microfrontends');
-        fs.mkdirSync(this.projectName + '/src/app/shell-application');
+        fs.mkdirSync(this.projectName + 'microfrontends');
+        fs.mkdirSync(this.projectName + 'shell-application');
         let projectNamePrompt = await enquirer.prompt({
             type: 'input',
-            name: 'numberOfModules',
-            message: 'Enter number of modules: '
+            name: 'numberOfMicroFrontends',
+            message: 'Enter number of micro Frontend: '
         });
-        const numberOfModules = projectNamePrompt['numberOfModules'];
+        const numberOfModules = projectNamePrompt['numberOfMicroFrontends'];
 
         for (var i = 0; i < parseInt(numberOfModules); i++) {
             const prompt = await enquirer.prompt({
                 type: 'input',
-                name: 'module',
-                message: `Enter module ${i + 1} name: `
+                name: 'microFrontend',
+                message: `Enter micro-frontend ${i + 1} name: `
             });
 
-            this.modules.push(prompt['module']);
+            this.microFrontends.push(prompt['microFrontend']);
         }
-        for (const module of this.modules) {
-            const command = `ng generate module ${module}`;
-            const options = { cwd: `${this.getProjectPath()}/modules`, stdio: 'inherit' };
+        console.table(this.microFrontends);
+        for (const microFrontend of this.microFrontends) {
+            const command = `ng new  ${microFrontend} --skip-tests=true --skip-install=true`;
+            const options = { cwd: `microfrontends`, stdio: 'inherit' };
             execSync(command, options);
         }
     }
 
-    configureModuleFolders() {
-        console.log('================================================================');
-        const projectPath = this.getProjectPath();
 
-        for (const module of this.modules) {
-            fs.mkdirSync(`${projectPath}/modules/${module}/components`);
-            fs.writeFileSync(`${projectPath}/modules/${module}/components/readme.md`, '');
-
-            fs.mkdirSync(`${projectPath}/modules/${module}/services`);
-            fs.writeFileSync(`${projectPath}/modules/${module}/services/readme.md`, '');
-
-            fs.writeFileSync(`${projectPath}/modules/${module}/readme.md`, '');
-        }
-    }
 
     async createArchitecture() {
         await this.createArchitectureFolders();
-        this.configureModuleFolders();
         console.log('Successfully created Angular Feature Module Architecture');
 
 

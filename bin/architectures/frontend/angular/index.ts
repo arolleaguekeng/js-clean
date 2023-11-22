@@ -65,8 +65,8 @@ export class AngularCleanArchitectureCli {
                 this.createAngMonArch();
             case "Angular Service-Oriented Architecture (SOA)":
                 this.createAngSOAArch();
-            case "Angular Micro Frontends ":
-                this.createAngMicroArch();
+            case "Angular Micro Frontends":
+                this.createMicroFrontArchitecture();
             case "Angular Serverless Architecture":
                 this.createAngServArch();
         }
@@ -93,7 +93,7 @@ export class AngularCleanArchitectureCli {
 
 
 
-    async createAngMicroArch() {
+    async createMicroFrontArchitecture() {
         console.log("*******************ang micros arch *************************");
         new AngularMicroFrontArchitecture(this.projectName).createArchitecture();
         // TODO: Create Angular Micro Frontends
