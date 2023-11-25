@@ -31,17 +31,16 @@ async function app() {
     }
 }
 
-function createFrontend() {
+export  function createFrontend() {
     console.clear();
     let frontend = new FrontendCleanArchitectureCli();
     frontend.CreateFrontend();
 }
 
-function createBackend() {
+export function createBackend() {
     console.clear();
     let backend = new BackendCleanArchitectureCli();
     backend.createBackend();
 }
-
 
 app();
