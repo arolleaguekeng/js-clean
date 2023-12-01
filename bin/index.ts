@@ -10,7 +10,7 @@ let backOrFront = [
 
 async function app() {
     console.log('================================================================');
-    console.log('*************************  JS - PLANNER ***********************');
+    console.log('*************************  JS - CLEAN ***********************');
     console.log('================================================================');
 
     const backOrFrontPrompt = await new Select({

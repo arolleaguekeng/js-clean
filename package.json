@@ -3,10 +3,12 @@
   "version": "0.0.1",
   "description": "Creation of clean architecture templates for javascript and type projects",
   "main": "bin/index.ts",
+
   "scripts": {
     "test": "acam test",
     "start": "ts-node  bin/index.ts",
-    "jcl-create": "ts-node bin/cli.ts"
+    "jcl-create": "ts-node bin/cli.sh",
+    "jsc": " ts-node bin/cli.ts"
   },
   "repository": {
     "type": "git",
@@ -47,13 +49,22 @@
   },
   "homepage": "https://github.com/arolleaguekeng/js-clean#readme",
   "devDependencies": {
+    "@types/inquirer": "^9.0.7",
+    "@types/jest": "^29.5.10",
     "@types/node": "^20.8.7",
+    "@types/semver": "^7.5.6",
     "@types/yargs": "^17.0.32"
   },
   "dependencies": {
+    "@angular-devkit/architect": "^0.1700.4",
+    "@angular-devkit/core": "^17.0.4",
+    "@angular-devkit/schematics": "^17.0.5",
     "blessed": "^0.1.81",
     "child_process": "^1.0.2",
     "enquirer": "^2.4.1",
+    "inquirer": "^9.2.12",
+    "jsonc-parser": "^3.2.0",
+    "semver": "^7.5.4",
     "ts-node": "^10.9.1",
     "typescript": "^5.2.2",
     "yargs": "^17.7.2"
